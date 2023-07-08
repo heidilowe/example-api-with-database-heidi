@@ -1,2 +1,14 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+
+# new* - checking that the API is set up
+@app.route('/')
+def ping():
+    return jsonify({
+        'message': 'hi'
+    })
+
 if __name__ == '__main__':
-    print('Hello World!')
+    app.run(port = 3306)
